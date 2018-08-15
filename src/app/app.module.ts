@@ -4,7 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MyNavComponent } from './my-nav/my-nav.component';
-import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule, MatCardModule, MatSelectModule, MatFormFieldModule, MatButtonToggleModule, MatInputModule, MatDatepickerToggle, MatTableModule, MatDatepickerModule, MatDatepicker, MatDatepickerInput } from '@angular/material';
+import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule, MatCardModule, MatSelectModule, MatFormFieldModule, MatButtonToggleModule, MatInputModule, MatTableModule } from '@angular/material';
 import { RouterModule } from '@angular/router';
 import { ROUTES } from './app.routes';
 import { CadastroComponent } from './cadastro/cadastro.component';
@@ -30,12 +30,12 @@ import { CatalogoComponent } from './catalogo/catalogo.component';
     MatFormFieldModule,
     FormsModule,
     MatButtonToggleModule,
+    MatTableModule,
     MatInputModule,
-    MatDatepickerToggle,
+    /* MatDatepickerToggle,
     MatDatepickerModule,
     MatDatepicker,
-    MatDatepickerInput,
-    MatTableModule,
+    MatDatepickerInput, */
     RouterModule.forRoot(ROUTES)
   ],
   
