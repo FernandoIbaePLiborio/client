@@ -32,4 +32,16 @@ export class Fabricante {
 export class Modelo {
     constructor(public value: string){}
 }
+export class Pais {
+    constructor(public value: string){}
+}
+export class Cidade {
+    constructor(public value: string){}
+}
+export class Motorista {
+    constructor(public value: string){}
+}
+export class Proprietario {
+    constructor(public value: string){}
+}
 

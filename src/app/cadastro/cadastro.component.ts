@@ -1,4 +1,4 @@
-import { TipoCarroceria, Modelo, Fabricante } from './../models/veiculo';
+import { TipoCarroceria, Modelo, Fabricante, Pais, Cidade, Proprietario, Motorista } from './../models/veiculo';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { HttpModule } from '@angular/http';
 import { Component, OnInit, Input } from '@angular/core';
@@ -19,6 +19,13 @@ export class CadastroComponent implements OnInit {
   selectedTipoCarroceria: string;
   selectedFabricante: string;
   selectedModelo: string;
+  selectedPais: string;
+  selectedCidade: string;
+  selectedMotorista: string;
+  selectedProprietario: string;
+  anoFabricacao: string;
+  anoModelo: string;
+  
   placaPatern = "^[a-zA-Z]{3}\-\d{4}$"
 
   tiposVeiculo: TipoVeiculo[] = [
@@ -41,31 +48,33 @@ export class CadastroComponent implements OnInit {
     { value: 'Gol', },
     { value: 'Sandero', }
   ];
+  paises: Pais[] = [
+    { value: 'Brasil' },
+    { value: 'França', },
+    { value: 'EUA', }
+  ];
+  cidades: Cidade[] = [
+    { value: 'Curitiba' },
+    { value: 'Paris', },
+    { value: 'California', }
+  ];
+  motoristas: Motorista[] = [
+    { value: 'Allam' },
+    { value: 'Betina', },
+    { value: 'Samara', }
+  ];
+  proprietarios: Proprietario[] = [
+    { value: 'Silvio' },
+    { value: 'Talita', },
+    { value: 'Katia', }
+  ];
 
   constructor() { }
 
   ngOnInit() {
-    /* $(document).ready(function(){
-      $("#placa").inputmask({mask: 'AAA-9999'});
-    }); */
-    /* this.motorsForm = new FormGroup({
-      name: new FormControl('', {
-        validators: [Validators.required, Validators.minLength(5)],
-        updateOn: 'blur'
-      }),
-      placa: this.motorsBuilder.control('', [Validators.required, Validators.pattern(this.placaPatern)]),
-      frota: this.motorsBuilder.control(''),
-      propriedade: this.motorsBuilder.control('', [Validators.required]),
-      tipoVeiculo: this.motorsBuilder.control('', [Validators.required]),
-      tipoCarroceria: this.motorsBuilder.control('', [Validators.required]),
-      fabricante: this.motorsBuilder.control(''),
-      modelo: this.motorsBuilder.control(''),
-      anoFabricacao: this.motorsBuilder.control(''),
-      anoModelo: this.motorsBuilder.control(''),
-      pais: this.motorsBuilder.control(''),
-      cidadeUF: this.motorsBuilder.control(''),
-      motorista: this.motorsBuilder.control(''),
-      proprietario: this.motorsBuilder.control('', [Validators.required])
-    })} */
+    
   }
+
+  
+
 }
