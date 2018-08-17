@@ -1,6 +1,8 @@
 import { VeiculosService } from './../services/veiculos.service';
 import { Component, OnInit } from '@angular/core';
-import { Veiculo } from '../models/veiculo';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { MatTableDataSource } from '@angular/material';
+import { Veiculo } from '../models/veiculo.model';
 
 @Component({
   selector: 'web-catalogo',
@@ -10,13 +12,10 @@ import { Veiculo } from '../models/veiculo';
 export class CatalogoComponent implements OnInit {
 
   listaVeiculos: Veiculo[]
-
+  
   constructor(private veiculoService: VeiculosService) { }
-
   ngOnInit() {
-    this.veiculoService.veiculos()
-      .subscribe(veiculos => this.listaVeiculos = veiculos)
-      console.log(this.listaVeiculos);
+    this.veiculoService.veiculos().subscribe(veiculos => this.listaVeiculos = veiculos)
   }
-
+  
 }

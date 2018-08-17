@@ -1,3 +1,10 @@
 <mat-nav-list>
-    <a mat-list-item *ngFor="let veiculo of listaVeiculos"></a>
+    <a mat-list-item *ngFor="let veiculo of listaVeiculos">
+        <web-veiculo [veiculo]="veiculo"></web-veiculo>
+    </a>
+    <div *ngIf="listaVeiculos?.length === 0" class="col-xs-12">
+        <p class="lead text-center">
+            Nenhum veiculo encontrado para busca.
+        </p>
+    </div>
 </mat-nav-list>

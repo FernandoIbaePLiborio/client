@@ -1,7 +1,6 @@
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MyNavComponent } from './my-nav/my-nav.component';
@@ -26,6 +25,8 @@ import {
 } from '@angular/material';
 import { VeiculosService } from './services/veiculos.service';
 import { HttpClientModule } from '@angular/common/http';
+import { VeiculoComponent } from './catalogo/veiculo/veiculo.component';
+import { NgModule } from '@angular/core';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { HttpClientModule } from '@angular/common/http';
     MyNavComponent,
     CadastroComponent,
     CatalogoComponent,
-    DatepickerComponent
+    DatepickerComponent,
+    VeiculoComponent,
   ],
   imports: [
     BrowserModule,
@@ -58,7 +60,6 @@ import { HttpClientModule } from '@angular/common/http';
     MatDatepickerInput, */
     RouterModule.forRoot(ROUTES)
   ],
-
   providers: [VeiculosService],
   bootstrap: [AppComponent]
 })
