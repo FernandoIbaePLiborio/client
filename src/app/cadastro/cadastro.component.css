@@ -1,4 +1,17 @@
-.cadastro{
-    padding: 50px;
-    margin: 50px;
+.cadastro {
+    width: 70%;
+    padding: 15px;
+}
+
+.width {
+    width: 100% !important;
+}
+
+.margin-top{
+    margin-top: 30px;
+}
+
+.big-input {
+    font-size: 16px;
+    margin-top: -16px;
 }

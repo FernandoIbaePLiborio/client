@@ -1,3 +1,4 @@
+import { environment } from './../../environments/environment.prod';
 import { VeiculosService } from './../services/veiculos.service';
 import { TipoCarroceria,  Modelo,  Fabricante,  Pais,  Cidade,  Proprietario,  Motorista,  Veiculo} from '../models/veiculo.model';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
@@ -7,6 +8,8 @@ import { FormControl, FormGroup, FormBuilder, FormsModule, Validators } from '@a
 import { MatButtonModule, MatCheckboxModule } from '@angular/material';
 import { TipoVeiculo } from '../models/veiculo.model';
 import { ActivatedRoute } from '@angular/router';
+
+declare var $: any;
 
 @Component({
   selector: 'web-cadastro',
@@ -98,6 +101,7 @@ export class CadastroComponent implements OnInit {
     }) */
   }
 
+
   salvar() {
     console.log(this.selectedTipoVeiculo)
     this.veiculo.tipoVeiculo = this.selectedTipoVeiculo;
@@ -112,6 +116,7 @@ export class CadastroComponent implements OnInit {
     this.veiculo.anoModelo = this.anoModelo;
         
   }
+
 
 /*   buscarVeiculo(id: string) {
     this.veiculosService.buscarVeiculo(this.route.snapshot.params['id'])

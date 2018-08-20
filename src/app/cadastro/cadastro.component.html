@@ -1,33 +1,46 @@
-<section class="content-header">
-  <form #form="ngForm" novalidate>
-    <div class="form-control cadastro">
-      {{form.value}}
-      {{form.valid}} {{form.value | json}}
-      <div class="row">
-        <div class="col-xs-12">
-          <mat-form-field class="example-full-width">
-            <input matInput name="placa" ngModel placeholder="Placa" value="" required>
+<form #form="ngForm" novalidate>
+  <div class="container cadastro">
+    <p>Informações do Veículo</p>
+    <div class="row margin-top">
+      <div class="col-md-3 col-sm-3">
+        <div class="form-group">
+          <mat-form-field class="width big-input">
+            <input matInput placeholder="Placa" name="placa" value="" required>
           </mat-form-field>
-          <mat-form-field class="example-full-width">
-            <input matInput placeholder="Frota" value="CCV">
+        </div>
+      </div>
+      <div class="col-md-6 col-sm-6">
+        <div class="form-group">
+          <mat-form-field class="width">
+            <input matInput placeholder="Frota" class="width" value="">
           </mat-form-field>
-          <mat-button-toggle-group ngModel name="proprio" aria-label="Font Style" style="margin: 15px">
+        </div>
+      </div>
+      <div class="col-md-2 col-sm-2 col-sm-offset-1">
+        <div class="form-group">
+          <mat-button-toggle-group name="proprio" aria-label="Font Style">
             <mat-button-toggle value="true">Próprio</mat-button-toggle>
             <mat-button-toggle value="false">Terceiro</mat-button-toggle>
           </mat-button-toggle-group>
         </div>
       </div>
-      <div class="row">
-        <div class="col-xs-12">
-          <mat-form-field>
-            <mat-select placeholder="Tipo do Veículo" class="form-control" [(ngModel)]="selectedTipoVeiculo" ngModel name="tipoVeiculo">
+    </div>
+    <div class="row">
+      <div class="col-md-6 col-sm-6">
+        <div class="form-group">
+          <mat-form-field class="width">
+            <mat-select placeholder="Tipo do Veículo">
               <mat-option *ngFor="let tipo of tiposVeiculo" [value]="tipo.value">
                 {{tipo.value}}
               </mat-option>
             </mat-select>
           </mat-form-field>
-          <mat-form-field>
-            <mat-select placeholder="Tipo da Carroceria" class="form-control" [(ngModel)]="selectedTipoCarroceria" ngModel name="tipoCarroceria">
+        </div>
+      </div>
+      <div class="col-md-6 col-sm-6">
+        <div class="form-group">
+          <mat-form-field class="width">
+            <mat-select placeholder="Tipo da Carroceria">
               <mat-option *ngFor="let tipo of tiposCarroceria" [value]="tipo.value">
                 {{tipo.value}}
               </mat-option>
@@ -35,17 +48,23 @@
           </mat-form-field>
         </div>
       </div>
-      <div class="row">
-        <div class="col-xs-12">
-          <mat-form-field>
-            <mat-select placeholder="Fabricante" class="form-control" [(ngModel)]="selectedFabricante" ngModel name="fabricante">
+    </div>
+    <div class="row">
+      <div class="col-md-6 col-sm-6">
+        <div class="form-group">
+          <mat-form-field class="width">
+            <mat-select placeholder="Fabricante" name="fabricante">
               <mat-option *ngFor="let fabricante of fabricantes" [value]="fabricante.value">
                 {{fabricante.value}}
               </mat-option>
             </mat-select>
           </mat-form-field>
-          <mat-form-field>
-            <mat-select placeholder="Modelo" class="form-control" [(ngModel)]="selectedModelo" ngModel name="modelo">
+        </div>
+      </div>
+      <div class="col-md-6 col-sm-6">
+        <div class="form-group">
+          <mat-form-field class="width">
+            <mat-select placeholder="Modelo" name="modelo">
               <mat-option *ngFor="let modelo of modelos" [value]="modelo.value">
                 {{modelo.value}}
               </mat-option>
@@ -53,21 +72,34 @@
           </mat-form-field>
         </div>
       </div>
-      <div class="row">
-        <div class="col-xs-12">
-          <web-datepicker></web-datepicker>
+    </div>
+
+    <div class="row">
+      <div class="col-md-3 col-sm-3">
+        <div class="form-group">
           <web-datepicker></web-datepicker>
         </div>
-        <div class="col-xs-12">
-          <mat-form-field>
-            <mat-select placeholder="País" class="form-control" [(ngModel)]="selectedPais" ngModel name="pais">
+      </div>
+      <div class="col-md-3 col-sm-3">
+        <div class="form-group">
+          <web-datepicker></web-datepicker>
+        </div>
+      </div>
+      <div class="col-md-3 col-sm-3">
+        <div class="form-group">
+          <mat-form-field class="width">
+            <mat-select placeholder="País" name="pais">
               <mat-option *ngFor="let pais of paises" [value]="pais.value">
                 {{pais.value}}
               </mat-option>
             </mat-select>
           </mat-form-field>
+        </div>
+      </div>
+      <div class="col-md-3 col-sm-3">
+        <div class="form-group">
           <mat-form-field>
-            <mat-select placeholder="Cidade" class="form-control" [(ngModel)]="selectedCidade" ngModel name="modelo">
+            <mat-select placeholder="Cidade/UF" name="cidade">
               <mat-option *ngFor="let cidade of cidades" [value]="cidade.value">
                 {{cidade.value}}
               </mat-option>
@@ -75,37 +107,38 @@
           </mat-form-field>
         </div>
       </div>
-      <div class="row">
-        <div class="col-xs-12">
-          <mat-form-field class="example-full-width">
-            <input matInput placeholder="Tara" >
-          </mat-form-field>
-          <mat-form-field class="example-full-width">
-            <input matInput placeholder="Capacidade de Carga">
-          </mat-form-field>
-          <mat-form-field class="example-full-width">
-            <input matInput placeholder="Cubagem">
-          </mat-form-field>
-        </div>
-      </div>
-
-      <!-- <mat-form-field class="form-group" [class.has-success]="true">
-        <mat-select placeholder="Tipo do Veículo">
-          <mat-option>Selecione a opção</mat-option>
-          <mat-option *ngFor="let tipo of " [value]="tipo.value">
-            {{tipo.value}}
-          </mat-option>
-        </mat-select>
-      </mat-form-field>-->
     </div>
     <div class="row">
-      <div class="col-xs-12" style="text-align: center">
-        <button mat-button (click)="salvar()" [disabled]="!form.valid">Click me!</button>
-        <!-- <button (click)="salvar(motorsForm.value)" class="btn btn-success pull-right" 
-        [disabled]="!motorsForm.valid">
-        <i class="fa fa-credit-card"></i> 
-        </button> -->
+      <div class="col-md-3">
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="Tara">
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="Capacidade de Carga">
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="Cubagem">
+        </mat-form-field>
       </div>
     </div>
-  </form>
-</section>
+
+    <!-- <mat-form-field class="form-group" [class.has-success]="true">
+      <mat-select placeholder="Tipo do Veículo">
+        <mat-option>Selecione a opção</mat-option>
+        <mat-option *ngFor="let tipo of " [value]="tipo.value">
+          {{tipo.value}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>-->
+  </div>
+  <div class="row">
+    <div class="col-xs-12" style="text-align: center">
+      <button mat-button (click)="salvar()" [disabled]="!form.valid">Click me!</button>
+      <!-- <button (click)="salvar(motorsForm.value)" class="btn btn-success pull-right" 
+        [disabled]="!motorsForm.valid">
+        <i class="fa fa-credit-card"></i> 
+      </button> -->
+    </div>
+  </div>
+
+</form>
