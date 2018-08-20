@@ -29,9 +29,10 @@ export class CadastroComponent implements OnInit {
   selectedCidade: string;
   selectedMotorista: string;
   selectedProprietario: string;
-  anoFabricacao: string;
   anoModelo: string;
   veiculo: Veiculo;
+  date = new Date();
+  anoFabricacao: Date;
 
   placaPatern = "^[a-zA-Z]{3}\-\d{4}$"
 
@@ -112,7 +113,7 @@ export class CadastroComponent implements OnInit {
     this.veiculo.cidade = this.selectedCidade;
     this.veiculo.motorista = this.selectedMotorista;
     this.veiculo.proprietario = this.selectedProprietario;
-    this.veiculo.anoFabricacao = this.anoFabricacao;
+    this.veiculo.anoFabricacao = this.anoFabricacao.toDateString();
     this.veiculo.anoModelo = this.anoModelo;
         
   }

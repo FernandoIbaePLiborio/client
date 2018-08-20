@@ -1,5 +1,5 @@
 import { MatDatepickerModule } from '@angular/material/datepicker';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -27,6 +27,9 @@ import { VeiculosService } from './services/veiculos.service';
 import { HttpClientModule } from '@angular/common/http';
 import { VeiculoComponent } from './catalogo/veiculo/veiculo.component';
 import { NgModule } from '@angular/core';
+import { MultidatepickerComponent } from './multidatepicker/multidatepicker.component';
+import { MultiDatepickerModule } from './multidatepicker/multidatepicker.module';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -55,6 +58,7 @@ import { NgModule } from '@angular/core';
     MatDatepickerModule,
     MatNativeDateModule,
     HttpClientModule,
+    MultiDatepickerModule,
     /* MatDatepickerToggle,
     MatDatepicker,
     MatDatepickerInput, */

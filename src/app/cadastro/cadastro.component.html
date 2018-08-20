@@ -73,16 +73,21 @@
         </div>
       </div>
     </div>
-
     <div class="row">
       <div class="col-md-3 col-sm-3">
         <div class="form-group">
-          <web-datepicker></web-datepicker>
+          <web-multidatepicker tabindex="-1" mode="YEAR" label="Ano Fabricação" [(ngModel)]="anoFabricacao" name="anoFabricacao" [max]="2020">
+
+          </web-multidatepicker>
+          {{anoFabricacao}}
         </div>
       </div>
       <div class="col-md-3 col-sm-3">
         <div class="form-group">
-          <web-datepicker></web-datepicker>
+            <web-multidatepicker tabindex="-1" mode="YEAR" label="Ano Modelo" [(ngModel)]="anoModelo" name="anoModelo" [max]="2020">
+
+            </web-multidatepicker>
+            {{anoModelo}}
         </div>
       </div>
       <div class="col-md-3 col-sm-3">
